@@ -6,6 +6,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src = "http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('table tr:gt(0)').click(function(){
+		var mem_id = $(this).find('td:eq(0)').text();
+		$(location).attr('href', '${pageContext.request.contextPath}/user/member/memberView.do?mem_id=' + mem_id);
+	});
+	
+});
+</script>
 </head>
 <body>
 <table>
