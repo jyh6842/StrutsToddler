@@ -15,6 +15,10 @@ $(function(){
 	$('input[value=회원목록]').click(function(){
 		$(location).attr('href', '${pageContext.request.contextPath}/user/member/memberList.do');
 	});
+	$('input[value=로그아웃]').click(function(){
+		$(location).attr('href', '${pageContext.request.contextPath}/user/join/logout.do');
+	});
+	
 });
 </script>
 </head>
