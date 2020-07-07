@@ -5,6 +5,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+function idCheck(){
+	$.ajax({
+		type : 'POST'
+		, url : '${pageContext.request.contextPath}/user/member/idCheck.do'
+		, dateType : 'JSON'
+		, data : {mem_id : $('input[name=mem_id]').val() } /* 전송할 데이터 */
+		, error : function(result){
+				alert(result.status);
+			}
+		,success : function(result){
+			// {flag : true | false}
+			alert(result.flag)
+		}
+	});
+}
+</script>
 </head>
 <style>
 .fieldName {text-align: center; background-color: #f4f4f4;}

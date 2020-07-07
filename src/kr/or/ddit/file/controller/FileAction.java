@@ -83,7 +83,7 @@ public class FileAction implements Action, ModelDriven<MemberVO>{
 	
 	public String fileDownload(){
 		File downloadFile = new File(GlobalConstant.FILE_PATH, this.fileName);
-		this.contentDisposition = "attachment;fileName=" + this.fileName;
+		this.contentDisposition = "attachment;fileName=" + this.fileName; // attachment;fileName ?
 		this.contentLength = downloadFile.length();
 		
 		try {
