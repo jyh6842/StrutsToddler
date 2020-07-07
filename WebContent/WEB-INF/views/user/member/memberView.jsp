@@ -12,6 +12,9 @@ $(function(){
 	$('input[value=탈퇴]').click(function(){
 		$(location).attr('href', '${pageContext.request.contextPath}/user/member/deleteMemberInfo.do?mem_id=${memberInfo.mem_id}');
 	});
+	$('input[value=회원목록]').click(function(){
+		$(location).attr('href', '${pageContext.request.contextPath}/user/member/memberList.do');
+	});
 });
 </script>
 </head>
