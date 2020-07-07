@@ -7,8 +7,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script type='text/javascript' src = 'http://code.jquery.com/jquery-latest.js'></script>
-<script type='text/javascript' src = '/ddit/js/common/validation.js'></script>
-
+<script type="text/javascript">
+$(function(){
+	$('input[value=탈퇴]').click(function(){
+		$(location).attr('href', '${pageContext.request.contextPath}/user/member/deleteMemberInfo.do?mem_id=${memberInfo.mem_id}');
+	});
+});
+</script>
 </head>
 <body>
 <form action='<%=request.getContextPath() %>/06/memberUpdate.jsp' method='post'>      
@@ -79,7 +84,7 @@
 		<tr>                                                              
 			<td colspan='2'>                                              
 				<input type='submit' value='수정' />
-				<input type="button" value='삭제'/>                      
+				<input type="button" value='탈퇴'/>                      
 				<input type='reset' value='취소' />                         
 				<input type="button" value='회원목록'/>                      
 				<input type="button" value='로그아웃'/>                      
