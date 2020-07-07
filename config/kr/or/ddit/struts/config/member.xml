@@ -26,6 +26,19 @@
    				<param name="actionName">memberList</param>
    			</result>
    		</action>
+   		
+   		<action name="memberForm">
+   			<result>/WEB-INF/views/user/member/memberForm.jsp</result>
+   		</action>
+   		
+   		<action name="insertMemberInfo" class="kr.or.ddit.member.controller.InsertMemberAction">
+   			<interceptor-ref name="modelDriven"></interceptor-ref>
+   			<interceptor-ref name="params"></interceptor-ref>
+   			<result type="redirectAction">
+   				<param name="namespace">/user/join</param>
+   				<param name="actionName">loginForm</param>
+   			</result>
+   		</action>
 		
 	</package>
 </struts>

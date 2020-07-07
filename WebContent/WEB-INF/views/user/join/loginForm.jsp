@@ -65,7 +65,7 @@ $(function() {
 								</tr>
 								<tr>
 									<td colspan="2">
-										<a href="${pageContext.request.contextPath }/user/member/memberForm.do">회원 갑입을 원하세요?</a>
+										<a href="${pageContext.request.contextPath }/user/member/memberForm.do">회원 가입을 원하세요?</a>
 									</td>
 								</tr>
 							</table>

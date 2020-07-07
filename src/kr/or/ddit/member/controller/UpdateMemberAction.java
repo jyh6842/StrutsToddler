@@ -11,7 +11,7 @@ public class UpdateMemberAction implements ModelDriven<MemberVO>{
 	private MemberVO memberInfo;
 	
 	public String execute(){
-		// 스트러츠에서는 beanUtils로 받는 방식이 아니다.
+		// 스트러츠에서는 beanUtils로 받을 수 있지만 beanUtils를 사용하지 않고 struts 방식을 사용한다. 
 		IMemberService service = IMemberServiceImpl.getInstance();
 		service.updateMemberInfo(this.memberInfo);
 		
