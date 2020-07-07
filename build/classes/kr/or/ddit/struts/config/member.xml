@@ -18,6 +18,14 @@
 				<param name="actionName">loginForm</param>
 			</result>		
 		</action>
+		<action name="updateMemberInfo" class="kr.or.ddit.member.controller.UpdateMemberAction">
+			<interceptor-ref name="modelDriven"></interceptor-ref> <!-- beanUtils 역할을 하기위해서 선언해 줘야함 action 에서도 만들어줘야함 implements ModelDriven<MemberVO> 이렇게 implement 해서 사용할수 있도록함 -->
+   			<interceptor-ref name="params"></interceptor-ref> <!-- params 통해서 인터셉터를 함 action이 선언되면 default 이기 때문에 생략 가능 setter로 받을 수 있는 역할을 함-->
+   			<result type="chain">
+   				<param name="namespace">/user/member</param>
+   				<param name="actionName">memberList</param>
+   			</result>
+   		</action>
 		
 	</package>
 </struts>

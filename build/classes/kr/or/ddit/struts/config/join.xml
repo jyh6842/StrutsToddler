@@ -30,5 +30,6 @@
    				<![CDATA[/user/join/loginForm.do?message=${message}]]> <!-- ${message}을 UTF-8로 인코딩 해서 보내야 함 --> 
    			</result>
    		</action>
+   		
 	</package>
 </struts>

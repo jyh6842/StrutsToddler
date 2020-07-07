@@ -63,6 +63,11 @@ $(function() {
 									<td><b>패스워드</b></td>
 									<td><input type="password" name="mem_pass" class="box" tabindex="3" height="18" /></td>
 								</tr>
+								<tr>
+									<td colspan="2">
+										<a href="${pageContext.request.contextPath }/user/member/memberForm.do">회원 갑입을 원하세요?</a>
+									</td>
+								</tr>
 							</table>
 						</td>
 					</tr>

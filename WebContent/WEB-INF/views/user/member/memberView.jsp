@@ -23,7 +23,7 @@ $(function(){
 </script>
 </head>
 <body>
-<form action='<%=request.getContextPath() %>/06/memberUpdate.jsp' method='post'>      
+<form action='${pageContext.request.contextPath }/user/member/updateMemberInfo.do' method='post'>      
 	<input type="hidden" name='mem_id'  value='${memberInfo.mem_id }'/>
 	<table>                                                               
 		<tr>                                                              
