@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>StrutsToddler</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- 
+  		스트럿츠의 프론트 앤드 컨트롤러 선언 : 스트럿츠 프레임웤의 default url pattern의 확장자는 *.action 인데 action을 쓰기 위해서 url 에서 *.action 으로 해준다.
+  									url pattern 의 확장자 변경시 설정파일에서 설정
+  		스트럿츠의 설정파일(xml) : (빌드 패스 | 클래스 패스 루트) 하위에 존재
+  							 파일명 - struts.xml
+  							 외부 설정파일 존재시 - struts.properties 이 이름으로 해서 쓰면 됨  
+   -->
+   <filter>
+   		<filter-name>struts2</filter-name>
+   		<filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+   </filter>
+   <filter-mapping>
+   		<filter-name>struts2</filter-name>
+   		<url-pattern>*.do</url-pattern>
+   </filter-mapping>
+   
+<!--    log4j를 패키지에 넣으면 작동이 안하는데 패키지에 넣어서 활용할수 있도록 default 패키지이기 때문에 -->
+   	 <listener> <!-- Application(ServletContext) -->
+	 	<listener-class>kr.or.ddit.listener.Log4jInitializeListener</listener-class>
+	 </listener>
+</web-app>

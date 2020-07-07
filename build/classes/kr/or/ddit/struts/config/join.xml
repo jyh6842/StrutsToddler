@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- 
+		http://localhost/StrutsToddler/user/join/loginForm.do
+		http://localhost/StrutsToddler/user/join/loginForm.do?message=회원이 아닙니다.
+	 -->
+	<package name="joinPKG" extends="struts-default" namespace="/user/join">
+		<action name="loginForm">
+			<result>/WEB-INF/views/user/join/loginForm.jsp</result>
+		</action>
+		<action name="loginCheck" class="kr.or.ddit.join.controller.LoginCheckAction">
+<!-- 			<result name="loginForm" type="redirectAction"> --> <!-- 로그 보기 싫다면 -->
+<!-- 				<param name="namespace">/user/join</param> -->
+<!-- 				<param name="actionName">loginForm</param> -->
+<!-- 				<param name="message">${message}</param> -->
+<!-- 			</result> -->
+			<result name="loginForm" type="redirect"> <!-- 위에 주석 처리한거를 쓰면 로그를 볼수 있다.-->
+				<![CDATA[/user/join/loginForm.do?message=${message}]]>
+			</result>
+			<result name="success" type="chain"> <!-- chain은 foward를 말한다 --> <!-- chain은 action 끼리 연결해 줄때 사용하고 dispather 은 action -> jsp 를 갈때 사용한다. -->
+ 				<param name="namespace">/user/member</param>
+				<param name="actionName">memberList</param>
+			</result>
+   		</action>
+	</package>
+</struts>

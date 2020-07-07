@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="memberPKG" extends="struts-default" namespace="/user/member">
+		<action name="memberList" class="kr.or.ddit.member.controller.MemberListAction">
+<!-- 			<result name="success" type="dispatcher">/WEB-INF/views/user/member/memberList.jsp</result>  name="success" type="dispatcher" 생략 가능-->
+			<result>/WEB-INF/views/user/member/memberList.jsp</result>
+		</action>
+		
+	</package>
+</struts>
