@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<!-- 	요청 주소 
+		http://localhost/StrutsToddler/file/fileUploadForm.do -->
+	<package name="filePKG" extends="struts-default" namespace="/file">
+		<action name="fileUploadForm">
+			<result>/WEB-INF/views/user/file/fileUploadForm.jsp</result>
+		</action>
+		<action name="fileUpload" class="kr.or.ddit.file.controller.FileAction">
+			<interceptor-ref name="fileUpload"></interceptor-ref> <!-- 파일 업로드를 하기위해서는  필수 --> <!-- 멀티파트 리퀘스트를 쓸수 잇게 해줌 -->
+			<interceptor-ref name="modelDriven"></interceptor-ref> <!-- valueStack에 값을 올려준다. -->
+			<interceptor-ref name="params"></interceptor-ref> <!-- 그 vo 내에 같은 이름이  있으면 세팅 해주는 역할을 한다. -->
+			<result type="redirect">
+				<![CDATA[/file/fileUploadForm.do?fileName=${fileName}]]>
+			</result>
+		</action>
+	</package>
+</struts>

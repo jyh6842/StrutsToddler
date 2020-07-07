@@ -1,5 +1,8 @@
 package kr.or.ddit.vo;
 
+import java.io.File;
+import java.util.List;
+
 public class MemberVO {
 	// SELECT 'String ' || LOWER(COLUMN_NAME)||';' 
 	// FROM USER_TAB_COLUMNS 
@@ -24,6 +27,18 @@ public class MemberVO {
 	String mem_memorialday;
 	String mem_mileage;
 	String mem_delete;
+
+	// 전송되는 파일, 파일 컨텐츠 타입, 파일명 을 
+	// 파람스 인터셉터로 세팅하게 만들자
+	// input type=file name=files
+	// 1. 전송되는 파일(변수명 필드네임)
+	private List<File> files; // 필드네임은 name 속성에 사용한 이름을 말한다.
+	// 2. 전송되는 파일 컨텐츠 타입
+	// 변수명명 규칙 : 필드네임 + ContentType
+	private List<String> filesContentType;
+	// 3. 전송되는 파일명
+	// 변수명명 규칙 : 필드 네임 + FileName
+	private List<String> filesFileName;
 	
 	public String getMem_id() {
 		return mem_id;
@@ -138,5 +153,23 @@ public class MemberVO {
 	}
 	public void setMem_delete(String mem_delete) {
 		this.mem_delete = mem_delete;
+	}
+	public List<File> getFiles() {
+		return files;
+	}
+	public void setFiles(List<File> files) {
+		this.files = files;
+	}
+	public List<String> getFilesContentType() {
+		return filesContentType;
+	}
+	public void setFilesContentType(List<String> filesContentType) {
+		this.filesContentType = filesContentType;
+	}
+	public List<String> getFilesFileName() {
+		return filesFileName;
+	}
+	public void setFilesFileName(List<String> filesFileName) {
+		this.filesFileName = filesFileName;
 	}
 }
