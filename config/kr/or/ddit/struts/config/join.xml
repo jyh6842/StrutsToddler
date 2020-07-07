@@ -17,7 +17,7 @@
 <!-- 				<param name="actionName">loginForm</param> -->
 <!-- 				<param name="message">${message}</param> -->
 <!-- 			</result> -->
-			<result name="loginForm" type="redirect"> <!-- 위에 주석 처리한거를 쓰면 로그를 볼수 있다.-->
+			<result name="loginForm" type="redirect"> <!-- 위에 주석 처리한거를 쓰면 로그를 볼수 있다.--> <!-- LoginCheckAction 에서 "loginForm" 로 return -->
 				<![CDATA[/user/join/loginForm.do?message=${message}]]>
 			</result>
 			<result name="success" type="chain"> <!-- chain은 foward를 말한다 --> <!-- chain은 action 끼리 연결해 줄때 사용하고 dispather 은 action -> jsp 를 갈때 사용한다. -->

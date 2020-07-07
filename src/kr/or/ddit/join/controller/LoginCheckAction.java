@@ -55,7 +55,7 @@ public class LoginCheckAction {
 			} catch (UnsupportedEncodingException e) {
 				e.printStackTrace();
 			}
-			return "loginForm"; // action 이름이다. result 아님
+			return "loginForm"; // result 이름이다. result에서 이러한 이름으로 받는다
 			
 		}else{
 			session.setAttribute("LOGIN_MEMBERINFO", memberInfo);
