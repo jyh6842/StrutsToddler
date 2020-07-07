@@ -39,6 +39,10 @@
    				<param name="actionName">loginForm</param>
    			</result>
    		</action>
+   		
+   		<action name="idCheck" class="kr.or.ddit.member.controller.IDCheckAction">
+   			
+   		</action>
 		
 	</package>
 </struts>
