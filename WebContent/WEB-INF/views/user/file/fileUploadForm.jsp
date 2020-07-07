@@ -61,6 +61,7 @@
 		</tr>
 	</table>
 </form>
-<img alt="" src="/files/${param.fileName }">
+<img alt="" src="/files/${param.fileName }" 
+	onclick="javascript:location.href='${pageContext.request.contextPath}/file/fileDownload.do?fileName=${param.fileName }'">
 </body>
 </html>

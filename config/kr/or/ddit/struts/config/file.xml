@@ -17,5 +17,17 @@
 				<![CDATA[/file/fileUploadForm.do?fileName=${fileName}]]>
 			</result>
 		</action>
+		<action name="fileDownload" class="kr.or.ddit.file.controller.FileAction"
+			method="fileDownload"> <!-- 업로드와 같은 클래스와 연결하고 메소드명만 바꿔서 사용 -->
+			<result type="stream">
+				<param name="contentType">binary/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">${contentDisposition}</param>
+				<param name="contentLength">${contentLength}</param>
+				<param name="bufferSize">4096</param>
+			
+			</result>
+			
+		</action>
 	</package>
 </struts>

@@ -1,6 +1,9 @@
 package kr.or.ddit.file.controller;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -57,5 +60,41 @@ public class FileAction implements Action, ModelDriven<MemberVO>{
 	public String getFileName() {
 		return fileName;
 	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+	
+	private String contentDisposition;
+	private long contentLength;
+	private InputStream inputStream;
+	
+	public String getContentDisposition() {
+		return contentDisposition;
+	}
+	
+	public long getContentLength() {
+		return contentLength;
+	}
+	
+	public InputStream getInputStream() {
+		return inputStream;
+	}
+	
+	public String fileDownload(){
+		File downloadFile = new File(GlobalConstant.FILE_PATH, this.fileName);
+		this.contentDisposition = "attachment;fileName=" + this.fileName;
+		this.contentLength = downloadFile.length();
+		
+		try {
+			this.inputStream = new FileInputStream(downloadFile);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		return "success";
+	}
+	
+	
 	
 }
